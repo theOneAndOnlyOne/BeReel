@@ -30,7 +30,7 @@ def overlay_images(primary_folder, secondary_folder, output_folder):
             # TO DO: Could be possible to pull these images directly from the API Endpoint, that way we won't have to use a database in the future
             primary_image = Image.open(primary_path)
             secondary_image = Image.open(secondary_path)
-            source = Image.open(r'\static\iamges\secondary_image_outline.png')
+            source = Image.open(os.path.join(os.getcwd(), "static\images\secondary_image_outline.png"))
 
             primary_image = primary_image.convert("RGBA")
             secondary_image = secondary_image.convert("RGBA")
