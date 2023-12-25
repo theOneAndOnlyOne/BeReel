@@ -7,8 +7,8 @@ import librosa
 
 def create_endcard(num_memories, font_size=50, offset = 110):
 
-    input_image_path = "endCard_template.jpg"
-    output_image_path = "endCard.jpg"
+    input_image_path = r'static\images\endCard_template.jpg'
+    output_image_path = r'static\images\endCard.jpg'
 
     text = str(num_memories) + " memories and counting..."
 
