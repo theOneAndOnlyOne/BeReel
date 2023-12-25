@@ -1,0 +1,48 @@
+<!-- privacy.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeReel. | Privacy Policy</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Top navigation bar -->
+    <div class="navbar">
+        <a href="/" style="padding: 0px 10px 0px 0px"> <!-- Im sorry if I styled it like this, but i had to. there was no other way :) -->
+            <div class="navbar-title">
+                    <img href="/" src="/static/images/BeReel_Logo.png" alt="" width="30" height="30"> <!-- Adjust image path and dimensions -->
+                    <div class="navbar-title-text">
+                         BeReel.
+                    </div>
+            </div>
+        </a>
+        <div class="navbar-links">
+            <a class="navbar-link-item" href="/">Home</a>
+            <a class="navbar-link-item" href="/about">About</a>
+            <a class="navbar-link-item" href="/privacy">Privacy Policy</a>
+            <a class="navbar-link-item" href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p>BeReel was developed as an open-source app and gathers information from an unofficial BeReal API from chemokita13. <b>BeReel has no association and responsibility with the API's development </b>and how it accesses user information. See this <a href="https://github.com/chemokita13/beReal-api">link</a> for more information about this API Project. This app is to be run <b>locally</b> as to comply with user security laws and privacy. Under no cases does this app store metadata elsewhere and all related images to develop the timelapse can be found in local folders labelled /primary /secondary /combined /static. All videos and images produced from this app is to be considered personal use and should only use accounts owned by the user.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/policy">Privacy Policy</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </footer>
+    <!-- Your scripts and other content here -->
+</body>
+</html>

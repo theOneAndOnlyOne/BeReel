@@ -1,0 +1,73 @@
+<!-- about.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeReel. | About</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Top navigation bar -->
+    <div class="navbar">
+        <a href="/" style="padding: 0px 10px 0px 0px"> <!-- Im sorry if I styled it like this, but i had to. there was no other way :) -->
+            <div class="navbar-title">
+                    <img href="/" src="/static/images/BeReel_Logo.png" alt="" width="30" height="30"> <!-- Adjust image path and dimensions -->
+                    <div class="navbar-title-text">
+                         BeReel.
+                    </div>
+            </div>
+        </a>
+        <div class="navbar-links">
+            <a class="navbar-link-item" href="/">Home</a>
+            <a class="navbar-link-item" href="/about">About</a>
+            <a class="navbar-link-item" href="/privacy">Privacy Policy</a>
+            <a class="navbar-link-item" href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>About</h1>
+        <p>Hi, I'm Joshua Gonzales, a student passionate about web development and all other cool things. BeReel is a tool that displays user memories from the app BeReal in a timelapse. I created this site as a passion project after being an active user and wanted to make something special for new years.</p>
+        <h1>FAQ</h1>
+        <h2>How does it work?</h2>
+        <p>All user information is fetched by another open-source project by <a href="https://github.com/chemokita13/beReal-api">chemokita13</a> 
+            by using an API to access endpoints from BeReal. It does most of the heavy lifting including user login, authentication, posting, 
+            feed information etc. It's an amazing project to look into and the creater is extremely talented so please give him a star.
+            After downloading all memories of the user's choosing, BeReel process it all, adding effects, audio, proper timing and
+            stores a video in your local computer. Check out the privacy policy page for more information.
+        </p>
+
+        <h2>My phone number doesn't work/can't get a verification code?</h2>
+        <p>Check if the phone number you entered includes your area code in E.164 format with no dashes, spaces or unrelated characters.
+            If you used BeReel repeatedly, please wait for a few minutes to request another verification code. I only tested the app with my
+            own phone number so only North American phone numbers are the ones confirmed to be working. If you got errors, add a discussion on the git page and I'll 
+            see how I can help. 👍
+        </p>
+
+        <h2>Will this have a full web release?</h2>
+        <p>Most likely not, sorry. There are a lot of resources involved that requires a lot of planning and infrastructure development to ensure data downloaded is stored
+            securely for each and every user. It is better to be used as a local-run application for personal use. I may consider it in the future but as of now it remains an
+            open-source passion project
+        </p>
+
+        <h2>dawg, who is that on the webpage favicon?</h2>
+        <p>the goat
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/policy">Privacy Policy</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </footer>
+    <!-- Your scripts and other content here -->
+</body>
+</html>

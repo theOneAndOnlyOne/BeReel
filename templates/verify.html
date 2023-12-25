@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeReel. | Verification</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Top navigation bar -->
+    <div class="navbar">
+        <a href="/" style="padding: 0px 10px 0px 0px"> <!-- Im sorry if I styled it like this, but i had to. there was no other way :) -->
+            <div class="navbar-title">
+                    <img href="/" src="/static/images/BeReel_Logo.png" alt="" width="30" height="30"> <!-- Adjust image path and dimensions -->
+                    <div class="navbar-title-text">
+                         BeReel.
+                    </div>
+            </div>
+        </a>
+        <div class="navbar-links">
+            <a class="navbar-link-item" href="/">Home</a>
+            <a class="navbar-link-item" href="/about">About</a>
+            <a class="navbar-link-item" href="/privacy">Privacy Policy</a>
+            <a class="navbar-link-item" href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Enter Verification Code</h1>
+        <form method="post" action="/verify">
+            <input type="text" name="verification_code" required>
+            <input type="hidden" name="otp_session" value="{{ otp_session }}">
+            <button type="submit">Verify</button>
+        </form>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/policy">Privacy Policy</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>
