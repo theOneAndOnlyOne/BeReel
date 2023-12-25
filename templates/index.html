@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeReel. | Start</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Top navigation bar -->
+    <div class="navbar">
+        <a href="/" style="padding: 0px 10px 0px 0px"> <!-- Im sorry if I styled it like this, but i had to. there was no other way :) -->
+            <div class="navbar-title">
+                    <img href="/" src="/static/images/BeReel_Logo.png" alt="" width="30" height="30"> <!-- Adjust image path and dimensions -->
+                    <div class="navbar-title-text">
+                         BeReel.
+                    </div>
+            </div>
+        </a>
+        <div class="navbar-links">
+            <a class="navbar-link-item" href="/">Home</a>
+            <a class="navbar-link-item" href="/about">About</a>
+            <a class="navbar-link-item" href="/privacy">Privacy Policy</a>
+            <a class="navbar-link-item" href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <p>Roll back the clock and relive your moments from BeReal. It's easy, fun, and a unique way to create a timelapse of all your posts.</p>
+        <h1>Enter Phone Number</h1>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            NOTE: Ensure you are entering your number with your area code in E.164 format
+        </div> 
+        <div>
+
+        <form method="post" action="/">
+            <input type="text" id="phoneNumber" name="phone_number" placeholder="+12223334444" required>
+            <button type="submit" onclick="addPlus()">Send Code</button>
+        </form>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/policy">Privacy Policy</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </footer>
+    
+    <script>
+ 
+        function addPlus() {
+            var phoneNumberInput = document.getElementById('phoneNumber');
+            var phoneNumberValue = phoneNumberInput.value;
+
+            // Remove any '-' or '_' characters
+            phoneNumberValue = phoneNumberValue.replace(/[-_]/g, '');
+
+            // Check if the input doesn't already start with '+'
+            if (!phoneNumberValue.startsWith('+')) {
+                // Add '+' at the beginning
+                phoneNumberInput.value = '+' + phoneNumberValue;
+            }
+
+            // You can submit the form or perform additional actions here if needed
+            // document.getElementById('phoneForm').submit();
+        }
+    </script>
+</body>
+</html>
