@@ -1,7 +1,13 @@
 <a name="readme-top"></a>
+
+![Welcome Screen](https://github.com/theOneAndOnlyOne/BeReel/blob/main/static/images/BeReal_Header.png)
+
 # BeReel:
 
 Miss the Timelapse Recap feature from ReReal? Introducing BeReel. A Flask-based webtool that gives you a customized timelapse of your favourite BeReal memories. 
+
+![Video Settings](https://github.com/theOneAndOnlyOne/BeReel/blob/main/static/images/BeReel_Video_Settings.png)
+
 
 * Implements a BeReal API to fetch user memories in a usable format
 * Fetch Memories at a specified date range
