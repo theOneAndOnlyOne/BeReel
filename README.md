@@ -29,7 +29,7 @@ Make sure you have the following installed on your machine:
 
 Run all required libraries and run the app:
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt --user
 python main.py
 ```
 The Flask app will be available on [http://localhost:5000/](http://localhost:5000/). Multiple folders will be created to pull all image data from your memories
