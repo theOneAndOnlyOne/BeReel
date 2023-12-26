@@ -7,8 +7,8 @@ import librosa
 
 def create_endcard(num_memories, font_size=50, offset = 110):
 
-    input_image_path = r'static\images\endCard_template.jpg'
-    output_image_path = r'static\images\endCard.jpg'
+    input_image_path = rf'static{os.path.sep}images{os.path.sep}endCard_template.jpg'
+    output_image_path = rf'static{os.path.sep}images{os.path.sep}endCard.jpg'
 
     text = str(num_memories) + " memories and counting..."
 
@@ -19,7 +19,7 @@ def create_endcard(num_memories, font_size=50, offset = 110):
     # Create a drawing object
     draw = ImageDraw.Draw(img)
     # Choose a font (you may need to provide the path to a font file)static\fonts\Inter-SemiBold.ttf
-    font = ImageFont.truetype(r'static\fonts\Inter-SemiBold.ttf', font_size)
+    font = ImageFont.truetype(rf'static{os.path.sep}fonts{os.path.sep}Inter-SemiBold.ttf', font_size)
     # Get the bounding box of the text
     text_bbox = draw.textbbox((0, 0), text, font=font)
     # Calculate the position to center the text

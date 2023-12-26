@@ -1,6 +1,9 @@
 from PIL import Image, ImageDraw, ImageFont, ImageChops
 import os
 
+OUTLINE_PATH = f"static{os.path.sep}images{os.path.sep}secondary_image_outline.png"
+FONT_PATH = rf"static{os.path.sep}fonts{os.path.sep}Inter-Bold.ttf"
+
 def overlay_images(primary_folder, secondary_folder, output_folder):
 
     font_size = 50
@@ -30,7 +33,7 @@ def overlay_images(primary_folder, secondary_folder, output_folder):
             # TO DO: Could be possible to pull these images directly from the API Endpoint, that way we won't have to use a database in the future
             primary_image = Image.open(primary_path)
             secondary_image = Image.open(secondary_path)
-            source = Image.open(os.path.join(os.getcwd(), "static\images\secondary_image_outline.png"))
+            source = Image.open(os.path.join(os.getcwd(), OUTLINE_PATH))
 
             primary_image = primary_image.convert("RGBA")
             secondary_image = secondary_image.convert("RGBA")
@@ -52,7 +55,7 @@ def overlay_images(primary_folder, secondary_folder, output_folder):
             # Create a drawing object
             draw = ImageDraw.Draw(primary_image)
             # Choose a font (you may need to provide the path to a font file)static\fonts\Inter-SemiBold.ttf
-            font = ImageFont.truetype(r'static\fonts\Inter-Bold.ttf', font_size)
+            font = ImageFont.truetype(FONT_PATH, font_size)
             # Get the bounding box of the text
             text_bbox = draw.textbbox((0, 0), date, font=font)
             # Calculate the position to center the text
