@@ -51,6 +51,10 @@ The Flask app will be available on [http://localhost:5000/](http://localhost:500
 
 This project wouldn't be here without the amazing work by [chemokita13](https://github.com/chemokita13/beReal-api). Please give him a star.
 
+This app is to be run <b>locally</b> as to comply with user security laws and privacy. Under no cases does this app store metadata elsewhere.
+The app utilizes this third-party API which may not be following terms set by BeReal, all videos and images produced from this app is to be considered personal use and should only use accounts owned by the user: 
+If the company has particular issues, please submit a request via links in my profile.
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
