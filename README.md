@@ -55,6 +55,10 @@ This app is to be run <b>locally</b> as to comply with user security laws and pr
 The app utilizes this third-party API which may not be following terms set by BeReal, all videos and images produced from this app is to be considered personal use and should only use accounts owned by the user: 
 If the company has particular issues, please submit a request via links in my profile.
 
+## Privacy Policy
+
+BeReel was developed as an open-source app and gathers information from an unofficial BeReal API from chemokita13. BeReel has no association and responsibility with the API's development and how it accesses user information. See this [link](https://github.com/chemokita13/beReal-api) for more information about this API Project. This app is to be run <b>locally</b> as to comply with user security laws and privacy. Under no cases does this app store metadata elsewhere and all related images to develop the timelapse can be found in local folders labelled /primary /secondary /combined /static. All videos and images produced from this app is to be considered personal use and should only use accounts owned by the user.
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
