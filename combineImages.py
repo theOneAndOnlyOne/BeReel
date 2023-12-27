@@ -1,4 +1,5 @@
 from multiprocessing import Pool
+import multiprocessing
 from PIL import Image, ImageDraw, ImageFont, ImageChops
 import os
 
@@ -92,14 +93,14 @@ def overlay_images(primary_folder, secondary_folder, output_folder):
     primary_filenames = os.listdir(primary_folder)
 
     # Use multiprocessing to process images in parallel
-    with Pool() as pool:
-        pool.starmap(
-            process_image,
-            [
-                (filename, primary_folder, secondary_folder, output_folder)
-                for filename in primary_filenames
-            ],
-        )
+    pool = Pool(processes=multiprocessing.cpu_count() - 2)
+    pool.starmap(
+        process_image,
+        [
+            (primary_filename, primary_folder, secondary_folder, output_folder)
+            for primary_filename in primary_filenames
+        ],
+    )
 
 
 def create_images():

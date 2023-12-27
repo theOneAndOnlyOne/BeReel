@@ -1,82 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BeReel. | Process Data</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" href="/static/styles.css">
-</head>
-<body>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='favicon.ico') }}"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
     <!-- Top navigation bar -->
     <div class="navbar">
-        <a href="/" style="padding: 0px 10px 0px 0px"> <!-- Im sorry if I styled it like this, but i had to. there was no other way :) -->
-            <div class="navbar-title">
-                    <img href="/" src="/static/images/BeReel_Logo.png" alt="" width="30" height="30"> <!-- Adjust image path and dimensions -->
-                    <div class="navbar-title-text">
-                         BeReel.
-                    </div>
-            </div>
-        </a>
-        <div class="navbar-links">
-            <a class="navbar-link-item" href="/">Home</a>
-            <a class="navbar-link-item" href="/about">About</a>
-            <a class="navbar-link-item" href="/privacy">Privacy Policy</a>
-            <a class="navbar-link-item" href="/contact">Contact</a>
+      <a href="/" style="padding: 0px 10px 0px 0px">
+        <!-- Im sorry if I styled it like this, but i had to. there was no other way :) -->
+        <div class="navbar-title">
+          <img
+            href="/"
+            src="/static/images/BeReel_Logo.png"
+            alt=""
+            width="30"
+            height="30"
+          />
+          <!-- Adjust image path and dimensions -->
+          <div class="navbar-title-text">BeReel.</div>
         </div>
+      </a>
+      <div class="navbar-links">
+        <a class="navbar-link-item" href="/">Home</a>
+        <a class="navbar-link-item" href="/about">About</a>
+        <a class="navbar-link-item" href="/privacy">Privacy Policy</a>
+        <a class="navbar-link-item" href="/contact">Contact</a>
+      </div>
     </div>
 
     <div class="container container-process">
-        <h1>Video Settings</h1>
-        <p>Verification Successful! Now please fill in the following information for the timelapse.</p>
+      <h1>Video Settings</h1>
+      <p>
+        Verification Successful! Now please fill in the following information
+        for the timelapse.
+      </p>
 
-        <div class ="video-settings">
-            <form id="processForm" method="post" action="/process" enctype="multipart/form-data">
-                <div>
-                    <label for="dateRange">Date Range:</label>
-                    <div class = "date-range">
-                        <input type="text" id="startDateRange" name="start_date_range" placeholder="YYYY-MM-DD" required>
-                        <input type="text" id="endDateRange" name="end_date_range" placeholder="YYYY-MM-DD" required>
-                    </div>
-                </div>
-                <div>
-                    <label for="fileInput">Select WAV File:</label>
-                    <input type="file" id="fileInput" name="wav_file" accept=".wav" required>
-                    <input type="hidden" name="tokenObj" value="{{ tokenObj }}">
-                </div>
-                <div>
-                    <label for="modeInput">Select Clip Length:</label>
-                    <select class = "mode-input-select" name="mode" id ="modeInput">
-                        <option value="classic">Classic (30 Seconds with Curve)</option>
-                        <option value="full">Full Song</option>
-                    </select>
-                </div>
-                <div>
-                    <button type="button" onclick="processData()">Process Data</button>
-                    <div id="submissionPrompt" style="visibility: hidden">
-                        <p>Creating Video... check progress in terminal</p>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-links">
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/policy">Privacy Policy</a>
-                <a href="/contact">Contact</a>
+      <div class="video-settings">
+        <form
+          id="processForm"
+          method="post"
+          action="/process"
+          enctype="multipart/form-data"
+        >
+          <div>
+            <label for="dateRange">Date Range:</label>
+            <div class="date-range">
+              <input
+                type="text"
+                id="startDateRange"
+                name="start_date_range"
+                placeholder="YYYY-MM-DD"
+                required
+              />
+              <input
+                type="text"
+                id="endDateRange"
+                name="end_date_range"
+                placeholder="YYYY-MM-DD"
+                required
+              />
             </div>
-        </footer>
+          </div>
+          <div>
+            <label for="fileInput">Select WAV File:</label>
+            <input
+              type="file"
+              id="fileInput"
+              name="wav_file"
+              accept=".wav"
+              required
+            />
+            <input type="hidden" name="tokenObj" value="{{ tokenObj }}" />
+          </div>
+          <div>
+            <label for="modeInput">Select Clip Length:</label>
+            <select class="mode-input-select" name="mode" id="modeInput">
+              <option value="classic">Classic (30 Seconds with Curve)</option>
+              <option value="full">Full Song</option>
+            </select>
+          </div>
+          <div>
+            <button type="button" onclick="processData()">Process Data</button>
+            <div id="submissionPrompt" style="visibility: hidden">
+              <p>Creating Video... check progress in terminal</p>
+            </div>
+          </div>
+        </form>
 
-        <script>
-            function processData() {
-                // You can add additional validation here before submitting the form
-                document.getElementById('submissionPrompt').style.visibility = 'visible';
-                document.getElementById('processForm').submit();
-            }
-        </script>
+        <form id="Recap" method="post" action="/recap" enctype="multipart/form-data">
+            <button type="button" onclick="processRecap()">2023 Recap</button>
+            <div id="submissionPrompt2" style="visibility: hidden">
+            <input type="hidden" name="tokenObj" value="{{ tokenObj }}" />
+              <p>Creating Video... check progress in terminal</p>
+            </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/policy">Privacy Policy</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </footer>
+
+      <script>
+        function processData() {
+          // You can add additional validation here before submitting the form
+          document.getElementById("submissionPrompt").style.visibility =
+            "visible";
+          document.getElementById("processForm").submit();
+        }
+        function processRecap() {
+          // You can add additional validation here before submitting the form
+          document.getElementById("submissionPrompt2").style.visibility =
+            "visible";
+          document.getElementById("Recap").submit();
+        }
+      </script>
     </div>
-</body>
+  </body>
 </html>
