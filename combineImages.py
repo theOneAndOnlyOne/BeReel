@@ -105,7 +105,3 @@ def create_images():
     output_folder = os.path.join(os.getcwd(), "combined")
 
     overlay_images(primary_folder, secondary_folder, output_folder)
-
-
-if __name__ == "__main__":
-    create_images()
