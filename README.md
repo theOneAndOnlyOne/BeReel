@@ -65,6 +65,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Buy Me A Coffee!
 
-You like to work here? Buy me a coffee by following this [link](https://www.buymeacoffee.com/theoneandonlyone)
+You like the work here? Feel free to buy me a coffee by following this [link](https://www.buymeacoffee.com/theoneandonlyone)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
