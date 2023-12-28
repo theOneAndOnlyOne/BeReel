@@ -240,8 +240,14 @@ def recap():
         start_date_range = "2023-01-01"
         end_date_range = "2023-12-31"
         tokenObj = request.form["tokenObj"]
-        print("> downloading images locally")
-        result = get_memories(tokenObj, start_date_range, end_date_range)
+
+        # check if a folder called 'primary' exists and 'secondary' exists
+
+        result = " "
+        if not os.path.exists("primary") or not os.path.exists("secondary"):
+            print("> downloading images locally")
+            result = get_memories(tokenObj, start_date_range, end_date_range)
+
         if result != "n/a":
             # Execute the Python functions
             create_images()  # process images and apply effects
