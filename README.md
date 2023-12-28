@@ -63,4 +63,8 @@ BeReel was developed as an open-source app and gathers information from an unoff
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
+## Buy Me A Coffee!
+
+You like to work here? Buy me a coffee by following this [link](https://www.buymeacoffee.com/theoneandonlyone)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
