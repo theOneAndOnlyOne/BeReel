@@ -29,8 +29,12 @@ def process_image(primary_filename, primary_folder, secondary_folder, output_fol
 
         # Load primary and secondary images and ignore if image cant be opened
 
-        primary_image = Image.open(primary_path)
-        secondary_image = Image.open(secondary_path)
+        try:
+            primary_image = Image.open(primary_path)
+            secondary_image = Image.open(secondary_path)
+        except:
+            print(f"Could not open image: {primary_path}, skipping...")
+            return
         source = Image.open(os.path.join(os.getcwd(), OUTLINE_PATH))
 
         primary_image = primary_image.convert("RGBA")
@@ -90,7 +94,7 @@ def overlay_images(primary_folder, secondary_folder, output_folder):
     primary_filenames = os.listdir(primary_folder)
 
     # Use multiprocessing to process images in parallel
-    pool = Pool(processes=5)
+    pool = Pool(processes=multiprocessing.cpu_count() // 2)
     pool.starmap(
         process_image,
         [
