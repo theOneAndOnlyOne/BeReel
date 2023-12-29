@@ -218,8 +218,10 @@ def process_data():
         except Exception as e:
             print(f"Error in processing data: {str(e)}")
 
-        print("> downloading images locally")
-        result = get_memories(tokenObj, start_date_range, end_date_range)
+        result = " "
+        if not os.path.exists("primary") or not os.path.exists("secondary"):
+            print("> downloading images locally")
+            result = get_memories(tokenObj, start_date_range, end_date_range)
 
         if result != "n/a":
             # Execute the Python functions
