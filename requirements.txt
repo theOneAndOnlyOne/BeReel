@@ -5,3 +5,4 @@ numpy==1.26.2
 Pillow==10.1.0
 pydub==0.25.1
 Requests==2.31.0
+opencv-python==4.9.80
