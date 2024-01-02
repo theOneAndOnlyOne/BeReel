@@ -22,7 +22,7 @@ Follow these instructions to get your project up and running.
 
 Make sure you have the following installed on your machine:
 
-- [Python](https://www.python.org/downloads/) (Only compatible with versions <3.12)
+- [Python](https://www.python.org/downloads/) (<b>Only compatible with version 3.11</b>)
 - [pip](https://pip.pypa.io/en/stable/installation/)
 
 ### Installing Dependencies
