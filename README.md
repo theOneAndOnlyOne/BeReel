@@ -24,6 +24,7 @@ Make sure you have the following installed on your machine:
 
 - [Python](https://www.python.org/downloads/) (<b>Only compatible with version 3.11</b>)
 - [pip](https://pip.pypa.io/en/stable/installation/)
+- [FFmpeg](https://ffmpeg.org/download.html)
 
 ### Installing Dependencies
 
