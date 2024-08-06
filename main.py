@@ -27,7 +27,7 @@ def send_code(phone):
         print("Response:", response.json())
         response_json = response.json()
         if "data" in response_json and "otpSession" in response_json["data"]:
-            otp_session = response_json["data"]["otpSession"]
+            otp_session = response_json["data"]["otpSession"]["sessionInfo"]
             print("OTP Session:", otp_session)
         else:
             print("No 'otpSession' found in the response.")
@@ -50,6 +50,7 @@ def verify(otp_session, otp_code):
     payload_verify = {"code": otp_code, "otpSession": otp_session}
 
     print("-- Sending Verify Request --")
+    print(payload_verify)
     response_verify = requests.post(url_verify, json=payload_verify)
     tokenObj = "n/a"
 
@@ -113,8 +114,8 @@ def get_memories(tokenObj, start_date_range, end_date_range):
 
     # Iterate through the 'data' array and download images
     for item in data_array:
-        image_url = item["primary"].get("url", "")
-        secondary_image_url = item["secondary"].get("url", "")
+        image_url = item["mainPostPrimaryMedia"].get("url", "")
+        secondary_image_url = item["mainPostSecondaryMedia"].get("url", "")
         date = item["memoryDay"]
         date_object = datetime.strptime(date, "%Y-%m-%d")
 
